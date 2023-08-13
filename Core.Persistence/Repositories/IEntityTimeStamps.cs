@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.Persistence.Repositories;
 
-public interface IQuery<T>
+public interface IEntityTimeStamps
 {
-    IQueryable<T> Query();
+    DateTime CreatedDate { get; set; }
+    DateTime? UpdatedDate { get; set; }
+    DateTime? DeletedDate { get; set; }
 }
