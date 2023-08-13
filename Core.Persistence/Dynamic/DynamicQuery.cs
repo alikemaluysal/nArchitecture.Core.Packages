@@ -17,7 +17,7 @@ public class DynamicQuery
 
     public DynamicQuery(IEnumerable<Sort>? sort, Filter? filter)
     {
-        Sort = sort;
         Filter = filter;
+        Sort = sort;
     }
 }
