@@ -29,7 +29,13 @@ public class HttpExceptionHandler : ExceptionHandler
         return Response.WriteAsync(details);
     }
 
+    protected override Task HandleException(ValidationException businessException)
+    {
+        Response.StatusCode = StatusCodes.Status400BadRequest;
+        string details = new ValidationProblemDetails(businessException.Errors).AsJson();
 
+        return Response.WriteAsync(details);
+    }
 
     protected override Task HandleException(Exception businessException)
     {
@@ -38,4 +44,6 @@ public class HttpExceptionHandler : ExceptionHandler
 
         return Response.WriteAsync(details);
     }
+
+
 }
