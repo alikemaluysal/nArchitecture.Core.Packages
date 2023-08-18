@@ -2,5 +2,5 @@
 
 public class CacheSettings
 {
-    public int SlidingExpriation { get; set; }
+    public int SlidingExpiration { get; set; }
 }
